@@ -1,9 +1,30 @@
 class chatbook:
+    __user_id = 0
     def __init__(self):
+        self.id = chatbook.__user_id
+        chatbook.__user_id +=1
         self.username = ""
         self.password = ""
+        self.__dob = "11-12-2013" ## to understand encapsulation
         self.loggedin = False
-        self.menu()
+        # self.menu()
+    
+    def __example(self): ## encapsulated method
+        print("test")
+
+    def get_dob(self): ## getter
+        return self.__dob # we can use this, inside class directly
+
+    def set_dob(self,val): ## setter
+        self.__dob = val
+
+    @staticmethod
+    def get_id():
+        return chatbook.__user_id
+    
+    @staticmethod
+    def set_id(val):
+        chatbook.__user_id = val
     
     def menu(self):
         user_input = int(input(""" Welcome to Chatbook | How would you like to proceed?
